@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use App\Models\Member;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\RedirectResponse;
@@ -12,6 +13,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
 use Illuminate\View\View;
+use Spatie\Permission\Models\Role;
 
 class RegisteredUserController extends Controller
 {
@@ -35,12 +37,30 @@ class RegisteredUserController extends Controller
             'email' => ['required', 'string', 'email', 'max:255', 'unique:'.User::class],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
+        $tempEmail = $request->email;
+        $memberUser = Member::where('email', $tempEmail)->first();
+        $user = '';
 
-        $user = User::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => Hash::make($request->password),
-        ]);
+        if(!$memberUser){
+            abort(403,'You are not an active member of the BLET Auxiliary or are using an different email address then we have on file.  Please try again or reach out to update your information with us.');
+        } elseif ($memberUser->exists()) {
+
+            // dd('Member exists');
+            $memberActive = $memberUser->active;
+            if($memberActive == true){
+                //dd('True Dat');
+                $memberRole = 'Member';
+                $user = User::create([
+                    'name' => $request->name,
+                    'email' => $request->email,
+                    'password' => Hash::make($request->password),
+                ]);
+                $user->assignRole($memberRole);
+            } else {
+                abort(403,'You are not an active member of the BLET Auxiliary or are using an different email address then we have on file.  Please try again or reach out to update your information with us.');
+            }
+
+        }
 
         event(new Registered($user));
 

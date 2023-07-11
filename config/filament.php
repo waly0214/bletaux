@@ -1,5 +1,6 @@
 <?php
 
+use App\Filament\Resources\MemberResource\Widgets\MemberStatsOverview;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\DispatchServingFilamentEvent;
 use Filament\Http\Middleware\MirrorConfigToSubpackages;
@@ -141,6 +142,7 @@ return [
         'register' => [
             Widgets\AccountWidget::class,
             Widgets\FilamentInfoWidget::class,
+            MemberStatsOverview::class,
         ],
     ],
 
@@ -169,7 +171,7 @@ return [
     |
     */
 
-    'dark_mode' => false,
+    'dark_mode' => true,
 
     /*
     |--------------------------------------------------------------------------
