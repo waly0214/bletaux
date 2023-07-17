@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('members', function (Blueprint $table) {
             $table->id();
             $table->boolean('active')->default(true);
+            $table->boolean('green')->default(false);
             $table->foreignId('auxiliary_id')->constrained()->cascadeOnDelete();
             $table->foreignId('position_id')->constrained()->cascadeOnDelete();
             $table->foreignId('national_position_id')->constrained()->cascadeOnDelete();

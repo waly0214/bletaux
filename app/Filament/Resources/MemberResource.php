@@ -54,6 +54,12 @@ class MemberResource extends Resource
                                 ->inline(false)
                                 ->onColor('success')
                                 ->offColor('danger'),
+                            Toggle::make('green')
+                                ->label('Green Member Status')
+                                ->default(true)
+                                ->inline(false)
+                                ->onColor('success')
+                                ->offColor('danger'),
                     ]),
                 ]),
                 Section::make('Basic Member Information')
@@ -111,13 +117,29 @@ class MemberResource extends Resource
                 Tables\Columns\IconColumn::make('active')
                     ->boolean()
                     ->sortable(),
+                Tables\Columns\IconColumn::make('green')
+                    ->label('Green Newsletter')
+                    ->alignCenter()
+                    ->boolean()
+                    ->sortable(),
                 TextColumn::make('first_name')->sortable()->searchable(),
                 TextColumn::make('last_name')->sortable()->searchable(),
                 TextColumn::make('auxiliary.name')->sortable()->searchable(),
-                TextColumn::make('updated_at')->dateTime(),
+
             ])
             ->filters([
                 SelectFilter::make('auxiliary')->relationship('auxiliary', 'name'),
+                SelectFilter::make('active')
+                    ->options([
+                        1 => 'Active',
+                        0 => 'Inactive',
+                    ]),
+                SelectFilter::make('green')
+                    ->label('Green Newsletter')
+                    ->options([
+                        1 => 'Green Subscriber',
+                        0 => 'Hard copy in the mail',
+                    ]),
             ])
             ->actions([
                 Tables\Actions\ViewAction::make(),

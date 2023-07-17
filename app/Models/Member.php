@@ -11,6 +11,7 @@ class Member extends Model
 
     protected $fillable = [
         'active',
+        'green',
         'position_id',
         'national_position_id',
         'position_type',

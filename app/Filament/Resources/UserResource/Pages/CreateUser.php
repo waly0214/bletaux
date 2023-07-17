@@ -25,6 +25,10 @@ class CreateUser extends CreateRecord
         return $user;
     }
 
+    protected function getCreatedNotificationTitle(): ?string {
+        return 'User was successfully created';
+    }
+
 }
 
 
