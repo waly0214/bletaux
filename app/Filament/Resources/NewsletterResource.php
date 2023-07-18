@@ -34,14 +34,7 @@ class NewsletterResource extends Resource
                     ->schema([
                         Forms\Components\TextInput::make('title')
                             ->required()
-                            ->maxLength(2048)
-                            ->reactive()
-                            ->afterStateUpdated(function(Closure $set, $state){
-                                $set('slug', Str::slug($state))->required();
-                        }),
-                        Forms\Components\TextInput::make('slug')
-                            ->required()
-                            ->maxLength(2048)
+                            ->maxLength(2048),
                         ]),
                 Forms\Components\Select::make('year')
                         ->options([
