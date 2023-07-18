@@ -22,6 +22,7 @@ class User extends Authenticatable implements FilamentUser
      * @var array<int, string>
      */
     protected $fillable = [
+        'member_id',
         'first_name',
         'last_name',
         'name',
@@ -53,9 +54,5 @@ class User extends Authenticatable implements FilamentUser
         return $this->hasRole(['Admin', 'Executive Committee Officer', 'Secretary', 'Treasurer', 'National President']);
     }
 
-    public function member() {
-        $member = Member::find()->where('email', '=', Auth::user('email'));
 
-        dd($member);
-        }
 }

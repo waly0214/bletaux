@@ -61,4 +61,9 @@ class Member extends Model
     public function membership_type() {
         return $this->belongsTo(MembershipType::class);// 1 member belongs to 1 membership
     }
+
+    public function member($id) {
+        $member = $this->find()->where('member_id', '=', $id)->first();
+        return $member;
+        }
 }

@@ -20,7 +20,7 @@ class CreateUser extends CreateRecord
     {
         /** @var \App\Models\User $user */
         $user = parent::handleRecordCreation($data);
-        $user->assignRole('Administrator');
+        $user->assignRole('Admin');
 
         return $user;
     }
@@ -28,6 +28,7 @@ class CreateUser extends CreateRecord
     protected function getCreatedNotificationTitle(): ?string {
         return 'User was successfully created';
     }
+
 
 }
 
