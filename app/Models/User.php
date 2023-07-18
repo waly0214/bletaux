@@ -6,6 +6,7 @@ namespace App\Models;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Auth\MustVerifyEmail;
 use Illuminate\Support\Facades\Auth;
+use Filament\Models\Contracts\HasName;
 use Spatie\Permission\Traits\HasRoles;
 use Illuminate\Notifications\Notifiable;
 use Filament\Models\Contracts\FilamentUser;
@@ -14,7 +15,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable implements FilamentUser
 {
-    use HasApiTokens, HasFactory, Notifiable, HasRoles;
+    use HasApiTokens, HasFactory, Notifiable, HasRoles, HasName;
 
     /**
      * The attributes that are mass assignable.
@@ -54,5 +55,12 @@ class User extends Authenticatable implements FilamentUser
         return $this->hasRole(['Admin', 'Executive Committee Officer', 'Secretary', 'Treasurer', 'National President']);
     }
 
+    public function getFilamentName(): string {
+        return $this->fullName;
+    }
+
+    public function getFullNameAttribute() {
+        return "{$this->first_name} {$this->last_name}";
+    }
 
 }
