@@ -18,6 +18,7 @@ return new class extends Migration
             $table->boolean('active')->default(true);
             $table->boolean('green')->default(false);
             $table->foreignId('auxiliary_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('membership_type_id')->constrained()->cascadeOnDelete();
             $table->foreignId('position_id')->constrained()->cascadeOnDelete();
             $table->foreignId('national_position_id')->constrained()->cascadeOnDelete();
             $table->string('first_name');
