@@ -5,11 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class MembershipType extends Model
+class Scholarship extends Model
 {
     use HasFactory;
 
     protected $fillable = [
         'name',
+        'description',
+        'link',
     ];
+
 }

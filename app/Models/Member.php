@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\MembershipType;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Member extends Model
 {
@@ -13,6 +14,7 @@ class Member extends Model
         'active',
         'green',
         'position_id',
+        'membership_type_id',
         'national_position_id',
         'position_type',
         'first_name',
@@ -54,5 +56,9 @@ class Member extends Model
 
     public function nationalPosition(){
         return $this->belongsTo(NationalPosition::class);
+    }
+
+    public function membership_type() {
+        return $this->belongsTo(MembershipType::class);// 1 member belongs to 1 membership
     }
 }

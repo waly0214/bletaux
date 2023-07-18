@@ -48,6 +48,9 @@ class MemberResource extends Resource
                             Select::make('auxiliary_id')
                                 ->relationship('auxiliary', 'name')
                                 ->required(),
+                            Select::make('membership_type_id')
+                                ->relationship('membership_type', 'name')
+                                ->required(),
                             Toggle::make('active')
                                 ->label('Active Member')
                                 ->default(true)

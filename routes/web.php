@@ -1,8 +1,9 @@
 <?php
 
-use App\Http\Controllers\NewsletterController;
-use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\NewsletterController;
+use App\Http\Controllers\ScholarshipController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,6 +29,7 @@ Route::middleware('auth')->group(function () {
 
 Route::group(['middleware' => 'auth'], function () {
     Route::resource('newsletters', NewsletterController::class);
+    Route::resource('scholarships', ScholarshipController::class);
 
 });
 

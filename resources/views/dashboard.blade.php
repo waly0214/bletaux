@@ -7,7 +7,7 @@
     </x-slot>
 
     <!-- component -->
-<!-- This is an example component -->
+<!-- This is the newsletter component -->
 <section class="bg-gray-100 dk:bg-gray-900 py-10 px-12">
     <div class="grid grid-flow-row gap-8 text-neutral-600 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         <div class="my-8 rounded shadow lg shadow-gray-200 dark:shadow-gray-900 bg-white dard:bg-gray-800 duration-300 hover:-translate-y-1">
@@ -21,6 +21,32 @@
                     </p>
             </a>
         </div>
+
+        <div class="my-8 rounded shadow lg shadow-gray-200 dark:shadow-gray-900 bg-white dard:bg-gray-800 duration-300 hover:-translate-y-1">
+            <a href="#" class="cursor pointer">
+                <!--Image -->
+                <img src="{{ asset('images/gavel.jpg') }}" class="rounded-t h-72 w-full object-cover"/>
+                <figcaption class="p-4">
+                    <!--Title -->
+                    <p class="text-center text-xl mb-4 font-bold leading-relaxed text-gray-800 dark:text-gray-300">
+                        BLET Auxiliary Bylaws
+                    </p>
+            </a>
+        </div>
+
+        <div class="my-8 rounded shadow lg shadow-gray-200 dark:shadow-gray-900 bg-white dard:bg-gray-800 duration-300 hover:-translate-y-1">
+            <a href="{{ route('scholarships.index') }}" class="cursor pointer">
+                <!--Image -->
+                <img src="{{ asset('images/scholarship.jpg') }}" class="rounded-t h-72 w-full"/>
+                <figcaption class="p-4">
+                    <!--Title -->
+                    <p class="text-center text-xl mb-4 font-bold leading-relaxed text-gray-800 dark:text-gray-300">
+                        Scholarship Application
+                    </p>
+            </a>
+        </div>
+
+
     </div>
 </section>
 

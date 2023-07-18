@@ -21,6 +21,18 @@
                         {{ __('Newsletters') }}
                     </x-nav-link>
                 </div>
+
+
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('scholarships.index')" :active="request()->routeIs('newsletters.index')">
+                        {{ __('BLET Auxiliary Bylaws') }}
+                    </x-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('scholarships.index')" :active="request()->routeIs('newsletters.index')">
+                        {{ __('Scholarships') }}
+                    </x-nav-link>
+                </div>
             </div>
 
             <!-- Settings Dropdown -->
