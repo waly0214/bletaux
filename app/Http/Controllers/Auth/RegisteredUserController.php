@@ -54,7 +54,6 @@ class RegisteredUserController extends Controller
                 //dd('True Dat');
                 $memberRole = 'Member';
                 $user = User::create([
-                    'member_id' => $memberUser->id,
                     'first_name' => $request->first_name,
                     'last_name' => $request->last_name,
                     'name' => $request->first_name .' ' . $request->last_name,
