@@ -58,7 +58,7 @@ class DuesTransactionResource extends Resource
             ->searchable(),
             Select::make('member_id')
             ->label('Member Name')
-            ->options(Member::all()->pluck('name', 'id'))
+            ->options(Member::all()->pluck('name', 'id'))->ascending()
             ->required()
             ->searchable(),
             DatePicker::make('date')->label('Transaction Date')->required(),
@@ -79,7 +79,6 @@ public static function table(Table $table): Table
         ->columns([
             TextColumn::make('year')->label('For Dues Year')->sortable()->searchable(),
             TextColumn::make('name')->label('Name')
-            ->sort('asc')
             ->sortable()->searchable(),
             TextColumn::make('date')->date('F d, Y')->sortable()->searchable(),
             TextColumn::make('amount')
