@@ -58,7 +58,7 @@ class DuesTransactionResource extends Resource
             ->searchable(),
             Select::make('member_id')
             ->label('Member Name')
-            ->options(Member::all()->pluck('name', 'id'))->ascending()
+            ->options(Member::all()->pluck('name', 'id'))
             ->required()
             ->searchable(),
             DatePicker::make('date')->label('Transaction Date')->required(),
