@@ -17,10 +17,10 @@ return new class extends Migration
         Schema::create('newsletters', function (Blueprint $table) {
             $table->id();
             $table->string('title', length:2048);
-            $table->string('slug', length:2048);
+            //$table->string('slug', length:2048);
             $table->string('location', length:2048)->nullable();
             $table->boolean('active');
-            $table->dateTime('year');
+            $table->string('year');
             $table->dateTime('published_at')->nullable();
             $table->foreignIdFor(User::class,'user_id');
             $table->timestamps();
