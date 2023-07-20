@@ -34,7 +34,7 @@
                     </x-nav-link>
                 </div>
 
-                @if(Auth::user()->hasAnyRole(['Admin', 'Executive Committee Officer', 'Secretary', 'Treasurer', 'National President']))
+                @if(Auth::user()->hasAnyRole(['Admin', 'Executive Committee Officer', 'National Secretary', 'Treasurer', 'National President']))
                     <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                         <x-nav-link :href="route('filament.pages.dashboard')" :active="request()->routeIs('filament.pages.dashboard')">
                             {{ __('Admin') }}
