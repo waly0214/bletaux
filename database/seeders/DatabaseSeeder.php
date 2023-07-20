@@ -24,6 +24,7 @@ class DatabaseSeeder extends Seeder
             'first_name' => 'William',
             'last_name' => 'Wallace',
             'name' => 'William Wallace',
+            'active' => true,
             'password' => '$2y$10$CVSEho6NhIJipDK6I3nyoeLOOV5VEFOpDCKqfuJxmd9cfq7Mvd2j.'
         ]);
 
