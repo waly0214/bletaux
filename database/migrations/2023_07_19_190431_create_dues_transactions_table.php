@@ -13,9 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('national_positions2', function (Blueprint $table) {
+        Schema::create('dues_transactions', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('member_id')->constrained()->cascadeOnDelete();
             $table->string('name');
+            $table->string('year');
+            $table->date('date');
+            $table->string('membershipType');
+            $table->decimal(19,2);
+            $table->string('memo')->nullable();
             $table->timestamps();
         });
     }
@@ -27,6 +33,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('national_positions');
+        Schema::dropIfExists('dues_transactions');
     }
 };

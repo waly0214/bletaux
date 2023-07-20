@@ -27,6 +27,7 @@ use App\Filament\Resources\MemberResource\Pages;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use SebastianBergmann\CodeCoverage\Driver\Selector;
 use App\Filament\Resources\MemberResource\RelationManagers;
+use App\Filament\Resources\MemberResource\RelationManagers\DuesTransactionsRelationManager;
 use App\Filament\Resources\MemberResource\Widgets\MemberStatsOverview;
 
 class MemberResource extends Resource
@@ -157,7 +158,7 @@ class MemberResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            DuesTransactionsRelationManager::class,
         ];
     }
 

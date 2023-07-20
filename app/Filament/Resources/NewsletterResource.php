@@ -80,6 +80,7 @@ class NewsletterResource extends Resource
                 TextColumn::make('year')->sortable()->searchable(),
                 TextColumn::make('title')->sortable()->searchable(),
                 TextColumn::make('created_at')->date(),
+
             ])
             ->filters([
                 //

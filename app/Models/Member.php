@@ -19,6 +19,8 @@ class Member extends Model
         'position_type',
         'first_name',
         'last_name',
+        'name',
+        'name_last_first',
         'address',
         'state',
         'city',
@@ -66,4 +68,8 @@ class Member extends Model
         $member = $this->find()->where('member_id', '=', $id)->first();
         return $member;
         }
+
+    public function duesTransactions() {
+        return $this->hasMany(DuesTransaction::class);
+    }
 }
