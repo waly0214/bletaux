@@ -79,6 +79,7 @@ public static function table(Table $table): Table
         ->columns([
             TextColumn::make('year')->label('For Dues Year')->sortable()->searchable(),
             TextColumn::make('name')->label('Name')
+            ->sort('asc')
             ->sortable()->searchable(),
             TextColumn::make('date')->date('F d, Y')->sortable()->searchable(),
             TextColumn::make('amount')
