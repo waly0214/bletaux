@@ -63,6 +63,14 @@ class PermissionResource extends Resource
             ]);
     }
 
+    public static function getEloquentQuery(): Builder
+{
+    return parent::getEloquentQuery()
+        ->withoutGlobalScopes([
+            SoftDeletingScope::class,
+        ]);
+}
+
     public static function getRelations(): array
     {
         return [

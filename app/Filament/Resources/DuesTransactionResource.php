@@ -96,6 +96,14 @@ public static function table(Table $table): Table
             ]);
     }
 
+    public static function getEloquentQuery(): Builder
+{
+    return parent::getEloquentQuery()
+        ->withoutGlobalScopes([
+            SoftDeletingScope::class,
+        ]);
+}
+
     public static function getRelations(): array
     {
         return [
