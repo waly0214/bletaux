@@ -34,7 +34,7 @@
                     </x-nav-link>
                 </div>
 
-                @if(Auth::user()->user_role == "role")
+                @if(Auth::user()->user_role == "Member")
                     <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                         <x-nav-link :href="route('filament.pages.dashboard')" :active="request()->routeIs('filament.pages.dashboard')">
                             {{ __('Admin') }}
