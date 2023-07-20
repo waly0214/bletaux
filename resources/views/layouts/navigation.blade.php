@@ -33,7 +33,7 @@
                         {{ __('Scholarships') }}
                     </x-nav-link>
                 </div>
-                @if (Auth::user())
+                @if ($member->role == 'member')
 
                 {{ dd(Auth::user()); }}
                     <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
