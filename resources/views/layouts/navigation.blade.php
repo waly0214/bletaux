@@ -35,7 +35,7 @@
                 </div>
 
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('/admin')" :active="request()->routeIs('/admin')">
+                    <x-nav-link :href="route('filament.pages.dashboard')" :active="request()->routeIs('filament.pages.dashboard')">
                         {{ __('Scholarships') }}
                     </x-nav-link>
                 </div>
