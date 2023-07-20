@@ -84,8 +84,7 @@ class UserResource extends Resource
 
                 ->schema([
 
-                    TextInput::make('home_phone'),
-                    TextInput::make('cell_phone'),
+
                     TextInput::make('email')->nullable()->unique(ignoreRecord:true),
 
 
