@@ -23,11 +23,14 @@ return new class extends Migration
             $table->foreignId('national_position_id')->constrained()->cascadeOnDelete();
             $table->string('first_name');
             $table->string('last_name');
+            $table->string('name')->nullable();
+            $table->string('name_last_first')->nullable();
+            $table->string('special_status')->nullable();
             $table->string('address')->nullable();
             $table->string('city')->nullable();
             $table->string('state')->nullable();
             $table->string('zip_code')->nullable();
-            $table->string('email');
+            $table->string('email')->nullable();
             $table->string('home_phone')->nullable();
             $table->string('cell_phone')->nullable();
             $table->date('date_of_birth')->nullable();
