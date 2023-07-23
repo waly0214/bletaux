@@ -28,9 +28,9 @@ class DatabaseSeeder extends Seeder
             'password' => '$2y$10$CVSEho6NhIJipDK6I3nyoeLOOV5VEFOpDCKqfuJxmd9cfq7Mvd2j.'
         ]);
 
-        // $adminRole = Role::create([
-        //     'name' => 'Admin',
-        // ]);
-        // $adminUser->assignRole($adminRole);
+        $adminRole = Role::create([
+            'name' => 'Admin',
+        ]);
+        $adminUser->assignRole($adminRole);
     }
 }
