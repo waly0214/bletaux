@@ -18,7 +18,7 @@ class NewsletterController extends Controller
 
     public function index()
     {
-        $newsletters = Newsletter::all()->orderBy('year');
+        $newsletters = Newsletter::all()->sortByDesc('year');
         return view('newsletters', compact('newsletters'));
     }
 
