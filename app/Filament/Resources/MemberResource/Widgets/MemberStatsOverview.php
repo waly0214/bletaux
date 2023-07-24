@@ -28,8 +28,8 @@ class MemberStatsOverview extends BaseWidget
     protected function getHeaderWidgetsColumns(): int | array
 {
     return [
-        'md' => 4,
-        'xl' => 5,
+        'md' => 2,
+        'xl' => 4,
     ];
 }
 }
