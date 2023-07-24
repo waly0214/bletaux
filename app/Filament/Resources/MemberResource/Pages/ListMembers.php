@@ -5,6 +5,7 @@ namespace App\Filament\Resources\MemberResource\Pages;
 use Filament\Pages\Actions;
 use Filament\Resources\Pages\ListRecords;
 use App\Filament\Resources\MemberResource;
+use App\Filament\Resources\MembersResource\Widgets\NewestMembers;
 use App\Filament\Resources\MemberResource\Widgets\MemberStatsOverview;
 
 class ListMembers extends ListRecords
