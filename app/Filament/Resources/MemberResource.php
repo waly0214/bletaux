@@ -60,7 +60,7 @@ class MemberResource extends Resource
                                 ->offColor('danger'),
                             Toggle::make('green')
                                 ->label('Green Member Status')
-                                ->default(true)
+                                ->default(false)
                                 ->inline(false)
                                 ->onColor('success')
                                 ->offColor('danger'),
@@ -93,8 +93,8 @@ class MemberResource extends Resource
 
                 Section::make('Contact Information / Positions Held')
                 ->schema([
-                    TextInput::make('home_phone'),
-                    TextInput::make('cell_phone'),
+                    TextInput::make('home_phone')->nullable(),
+                    TextInput::make('cell_phone')->nullable(),
                     TextInput::make('email')->nullable()->unique(ignoreRecord:true),
 
                     Select::make('position_id')->nullable()
