@@ -29,6 +29,7 @@ use SebastianBergmann\CodeCoverage\Driver\Selector;
 use App\Filament\Resources\MemberResource\RelationManagers;
 use App\Filament\Resources\MemberResource\RelationManagers\DuesTransactionsRelationManager;
 use App\Filament\Resources\MemberResource\Widgets\MemberStatsOverview;
+use App\Filament\Resources\MembersResource\Widgets\NewestMembers;
 
 class MemberResource extends Resource
 {
@@ -167,7 +168,7 @@ class MemberResource extends Resource
     public static function getWidgets(): array {
         return [
             MemberStatsOverview::class,
-            NewestMember::class,
+            NewestMembers::class,
         ];
     }
 
