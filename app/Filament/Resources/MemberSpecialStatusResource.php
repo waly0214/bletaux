@@ -21,6 +21,7 @@ class MemberSpecialStatusResource extends Resource
     protected static ?string $model = MemberSpecialStatus::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-collection';
+    protected static ?string $navigationGroup = 'Settings';
 
     public static function form(Form $form): Form
     {
