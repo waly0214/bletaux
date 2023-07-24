@@ -26,51 +26,45 @@ class DuesTransactionsRelationManager extends RelationManager
     public static function form(Form $form): Form
     {
         return $form
-            ->schema([
+        ->schema([
+            Select::make('year')
+            ->label('For Year')
+            ->options([
 
-                Select::make('year')
-                ->label('For Year')
-                ->options([
-                    '2025' => '2025',
-                    '2024' => '2024',
-                    '2023' => '2023',
-                    '2022' => '2022',
-                    '2021' => '2021',
-                    '2020' => '2020',
-                    '2019' => '2019',
-                    '2018' => '2018',
-                    '2017' => '2017',
-                    '2016' => '2016',
-                    '2015' => '2015',
-                    '2014' => '2014',
-                    '2013' => '2013',
-                    '2012' => '2012',
-                    '2011' => '2011',
-                    '2010' => '2010',
-                ])
-                ->required()
-                ->searchable(),
+                '2025' => '2025',
+                '2024' => '2024',
+                '2023' => '2023',
+                '2022' => '2022',
+                '2021' => '2021',
+                '2020' => '2020',
+                '2019' => '2019',
+                '2018' => '2018',
+                '2017' => '2017',
+                '2016' => '2016',
+                '2015' => '2015',
+                '2014' => '2014',
+                '2013' => '2013',
+                '2012' => '2012',
+                '2011' => '2011',
+                '2010' => '2010',
+            ])
+            ->required()
+            ->searchable(),
+            Select::make('member_id')
+            ->label('Member Name')
+            ->options(Member::all()->pluck('name', 'id'))
+            ->required()
+            ->searchable(),
+            DatePicker::make('date')->label('Transaction Date')->required(),
+            Select::make('membershipType')
+            ->label('Membership Type')
+            ->options(MembershipType::all()->pluck('name', 'id'))
+            ->required()
+            ->searchable(),
+            TextInput::make('amount')->required(),
+            TextInput::make('memo'),
 
-
-                Select::make('member_id')
-                ->label('Member Name')
-                ->options(Member::all()->pluck('name', 'id'))
-                ->required()
-                ->searchable(),
-
-                DatePicker::make('date')->label('Transaction Date')->required(),
-                Select::make('membershipType')
-                ->label('Membership Type')
-                ->options(MembershipType::all()->pluck('name', 'id'))
-                ->required()
-                ->searchable(),
-
-                TextInput::make('amount')
-                ->mask(fn (TextInput\Mask $mask) => $mask
-                ->money(prefix: '$', thousandsSeparator: ',', decimalPlaces: 2))
-                ->required(),
-                TextInput::make('memo'),
-            ]);
+        ]);
     }
 
     public static function table(Table $table): Table
