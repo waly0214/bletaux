@@ -50,11 +50,11 @@ class DuesTransactionsRelationManager extends RelationManager
             ])
             ->required()
             ->searchable(),
-            Select::make('member_id')
-            ->label('Member Name')
-            ->options(Member::all()->pluck('name', 'id'))
-            ->required()
-            ->searchable(),
+            // Select::make('member_id')
+            // ->label('Member Name')
+            // ->options(Member::all()->pluck('name', 'id'))
+            // ->required()
+            // ->searchable(),
             DatePicker::make('date')->label('Transaction Date')->required(),
             Select::make('membershipType')
             ->label('Membership Type')

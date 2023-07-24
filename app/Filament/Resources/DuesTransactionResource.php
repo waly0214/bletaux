@@ -25,10 +25,10 @@ class DuesTransactionResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-collection';
 
-    public function getMemberId(){
-        $memberId = Member::find()->where('id', '=', $this->route('id)'));
-        dd($memberId);
-    }
+    // public function getMemberId(){
+    //     $memberId = Member::find()->where('id', '=', $this->route('id)'));
+    //     dd($memberId);
+    // }
     public static function form(Form $form): Form
     {
         return $form
