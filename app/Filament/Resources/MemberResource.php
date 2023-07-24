@@ -167,6 +167,7 @@ class MemberResource extends Resource
     public static function getWidgets(): array {
         return [
             MemberStatsOverview::class,
+            NewestMember::class,
         ];
     }
 
