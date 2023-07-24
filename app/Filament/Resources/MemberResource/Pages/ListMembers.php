@@ -23,7 +23,6 @@ class ListMembers extends ListRecords
     {
         return [
             MemberStatsOverview::class,
-            NewestMembers::class,
         ];
     }
 }
