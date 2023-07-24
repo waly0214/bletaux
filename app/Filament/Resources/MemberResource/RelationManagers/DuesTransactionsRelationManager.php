@@ -72,7 +72,7 @@ class DuesTransactionsRelationManager extends RelationManager
         return $table
             ->columns([
                 TextColumn::make('year')->sortable()->searchable(),
-                TextColumn::make('name')->sortable()->searchable(),
+                // TextColumn::make('name')->sortable()->searchable(),
                 TextColumn::make('date')->date('F d, Y')->sortable()->searchable(),
                 TextColumn::make('amount')
                     ->icon('heroicon-o-currency-dollar')
