@@ -3,10 +3,13 @@
 namespace App\Policies;
 
 use App\Models\User;
+use Spatie\Permission\Models\Role;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
-class UserPolicy
+class MembershipTypes
 {
+    use HandlesAuthorization;
+
     use HandlesAuthorization;
 
     /**
@@ -17,31 +20,19 @@ class UserPolicy
      */
     public function viewAny(User $user)
     {
-        // if($user->hasPermissionTo('View Users')){
-        //     return true;
-        // } else {
-        //     return false;
-        // }
-
         return $user->hasRole(['Admin']);
-
     }
 
     /**
      * Determine whether the user can view the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\User  $model
+     * @param  \App\Models\Role  $role
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function view(User $user)
+    public function view(User $user, Role $role)
     {
-        // if($user->hasPermissionTo('View Users')){
-        //     return true;
-        // } else {
-        //     return false;
-        // }
-        return $user->hasRole(['Admin']);
+        //
     }
 
     /**
@@ -52,11 +43,6 @@ class UserPolicy
      */
     public function create(User $user)
     {
-        // if($user->hasPermissionTo('Create Users')){
-        //     return true;
-        // } else {
-        //     return false;
-        // }
         return $user->hasRole(['Admin']);
     }
 
@@ -64,16 +50,11 @@ class UserPolicy
      * Determine whether the user can update the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\User  $model
+     * @param  \App\Models\Role  $role
      * @return \Illuminate\Auth\Access\Response|bool
      */
     public function update(User $user)
     {
-        // if($user->hasPermissionTo('Update Users')){
-        //     return true;
-        // } else {
-        //     return false;
-        // }
         return $user->hasRole(['Admin']);
     }
 
@@ -81,16 +62,11 @@ class UserPolicy
      * Determine whether the user can delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\User  $model
+     * @param  \App\Models\Role  $role
      * @return \Illuminate\Auth\Access\Response|bool
      */
     public function delete(User $user)
     {
-        // if($user->hasPermissionTo('Delete Users')){
-        //     return true;
-        // } else {
-        //     return false;
-        // }
         return $user->hasRole(['Admin']);
     }
 
@@ -98,10 +74,10 @@ class UserPolicy
      * Determine whether the user can restore the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\User  $model
+     * @param  \App\Models\Role  $role
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function restore(User $user, User $model)
+    public function restore(User $user, Role $role)
     {
         //
     }
@@ -110,10 +86,10 @@ class UserPolicy
      * Determine whether the user can permanently delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\User  $model
+     * @param  \App\Models\Role  $role
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function forceDelete(User $user, User $model)
+    public function forceDelete(User $user, Role $role)
     {
         //
     }
