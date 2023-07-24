@@ -25,5 +25,11 @@ class MemberStatsOverview extends BaseWidget
         ];
     }
 
-
+    protected function getHeaderWidgetsColumns(): int | array
+{
+    return [
+        'md' => 2,
+        'xl' => 4,
+    ];
+}
 }
