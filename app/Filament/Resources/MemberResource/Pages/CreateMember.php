@@ -25,7 +25,7 @@ class CreateMember extends CreateRecord
     $member_name = Member::where( 'id', $member_id)->first();
     $data['name'] = $member_name->name_last_first;
     $data['member_id'] = $member_id;
-    //dd($data);
+    dd($data);
 
     return $data;
 
