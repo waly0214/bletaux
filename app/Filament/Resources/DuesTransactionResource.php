@@ -82,7 +82,7 @@ public static function table(Table $table): Table
             ->sortable()->searchable(),
             TextColumn::make('date')->date('F d, Y')->sortable()->searchable(),
             TextColumn::make('amount')
-                ->icon('heroicon-currency-dollar')
+                ->icon('heroicon-money'),
                 ->sortable()
                 ->searchable(),
             TextColumn::make('memo')->sortable()->searchable(),
