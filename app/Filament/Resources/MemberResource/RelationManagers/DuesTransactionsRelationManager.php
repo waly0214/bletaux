@@ -85,7 +85,7 @@ class DuesTransactionsRelationManager extends RelationManager
                 TextColumn::make('name')->sortable()->searchable(),
                 TextColumn::make('date')->date('F d, Y')->sortable()->searchable(),
                 TextColumn::make('amount')
-                    ->icon('feathericon-dollar-sign')
+                    ->icon('heroicon-o-currency-dollar')
                     ->sortable()
                     ->searchable(),
                 TextColumn::make('memo')->sortable()->searchable(),
